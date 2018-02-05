@@ -2,7 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import LandingPage from './components/LandingPage';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './reducers';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+
+ReactDOM.render(
+	<Provider store={store}>
+		<LandingPage />
+	</Provider>,
+	document.getElementById('root')
+);
