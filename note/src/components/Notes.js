@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getNotes, deleteNote } from '../actions';
 import UpdateForm from './UpdateForm';
+import AddForm from './AddForm';
 
 class Notes extends Component {
 	componentDidMount() {
@@ -13,19 +14,24 @@ class Notes extends Component {
 		const { notes, fetchingNotes, deleteNote } = this.props;
 		console.log('****notes.length ->', notes.length);
 		return (
-			<div className='Notes'>
+			<div className='notes'>
+				<div className='notes__add-form'>
+					<h1>Create new note</h1>
+					<AddForm />
+				</div>
 				{fetchingNotes ? (<h2>Loading...</h2>) :
-					(<ul>
+					(<ul className='notes-grid'>
 						{notes.map((note) => {
 							return (
-								<div key={note.id}>
+								<div className='note' key={note.id}>
 									<li>
 										<div>{note.title}</div>
+										<div>{note.text}</div>
 									</li>
-									<button onClick={() => deleteNote(note.id)}>Delete</button>
-									<div>
+									<div className='notes_update-form'>
 										<UpdateForm id={note.id}/>
 									</div>
+									<button onClick={() => deleteNote(note.id)}>Delete</button>
 								</div>
 							);
 						})}

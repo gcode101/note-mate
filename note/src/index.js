@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './css/less/index.css';
 import App from './App';
 import LandingPage from './components/LandingPage';
 import thunk from 'redux-thunk';

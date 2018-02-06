@@ -10,9 +10,11 @@ class UpdateNoteForm extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		const { title, author } = this.state;
+		const { title, text } = this.state;
 		const id = this.props.id;
-		this.props.updateNote(id, {title, author});
+		const form = document.getElementById('update-form');
+		form.reset();
+		this.props.updateNote(id, {title, text});
 	};
 
 	handleInput = (event) => {
@@ -21,7 +23,8 @@ class UpdateNoteForm extends Component {
 
 	render () {
 		return (
-				<form onSubmit={this.handleSubmit}>
+			<div className='update-form-input'>
+				<form id='update-form' onSubmit={this.handleSubmit}>
 					<input
 						type="text"
 						name="title"
@@ -29,15 +32,18 @@ class UpdateNoteForm extends Component {
 						value={this.state.title}
 						onChange={this.handleInput}
 					/>
-					<input
+					<textarea
+						rows='6'
+						cols='40'
 						type="text"
 						name="text"
 						placeholder="text"
-						value={this.state.author}
+						value={this.state.text}
 						onChange={this.handleInput}
-					/>
+					></textarea>
 					<button type="submit">Update</button>
 				</form>
+			</div>
 		);
 	}
 }

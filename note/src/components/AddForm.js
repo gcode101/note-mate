@@ -10,8 +10,10 @@ class AddNoteForm extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		const { title, author } = this.state;
-		this.props.createNote({title, author});
+		const { title, text } = this.state;
+		const form = document.getElementById('add-form');
+		form.reset();
+		this.props.createNote({title, text});
 	};
 
 	handleInput = (event) => {
@@ -20,7 +22,8 @@ class AddNoteForm extends Component {
 
 	render () {
 		return (
-				<form onSubmit={this.handleSubmit}>
+			<div className='add-form-input'>
+				<form id='add-form' onSubmit={this.handleSubmit}>
 					<input
 						type="text"
 						name="title"
@@ -28,15 +31,18 @@ class AddNoteForm extends Component {
 						value={this.state.title}
 						onChange={this.handleInput}
 					/>
-					<input
+					<textarea
+						rows='6'
+						cols='40'
 						type="text"
 						name="text"
 						placeholder="text"
-						value={this.state.author}
+						value={this.state.text}
 						onChange={this.handleInput}
-					/>
+					></textarea>
 					<button type="submit">Create Note</button>
 				</form>
+			</div>
 		);
 	}
 }
