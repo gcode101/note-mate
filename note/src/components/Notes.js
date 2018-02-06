@@ -9,7 +9,7 @@ class Notes extends Component {
 
 	render() {
 		console.log('****this.props ->', this.props);
-		const { notes, fetchingNotes } = this.props;
+		const { notes, fetchingNotes, deleteNote } = this.props;
 		console.log('****notes.length ->', notes.length);
 		return (
 			<div className='Notes'>
@@ -21,6 +21,7 @@ class Notes extends Component {
 									<li>
 										<div>{note.title}</div>
 									</li>
+									<button onClick={() => deleteNote(note.id)}>Delete</button>
 								</div>
 							);
 						})}
@@ -39,4 +40,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, { getNotes })(Notes);
+export default connect(mapStateToProps, { getNotes, deleteNote })(Notes);
