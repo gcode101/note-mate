@@ -1,9 +1,79 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+    {
+      "title": "LA Fitness",
+      "id": 2
+    },
+    {
+      "title": "Lambda School",
+      "id": 3
+    },
+    {
+      "title": "package.json",
+      "id": 8
+    },
+    {
+      "title": "bitcoin",
+      "id": 10
+    },
+    {
+      "title": "react app",
+      "id": 12
+    },
+    {
+      "title": "Hello World",
+      "id": 13
+    },
+    {
+      "title": "this is the latest note",
+      "id": 16
+    },
+    {
+      "title": "Doctor's App",
+      "id": 17
+    },
+    {
+      "title": "guelmis",
+      "id": 18
+    },
+    {
+      "title": "Note",
+      "id": 19
+    },
+    {
+      "title": "Big screen",
+      "id": 20
+    },
+    {
+      "title": "New note",
+      "id": 21
+    },
+    {
+      "title": "Another",
+      "id": 22
+    },
+    {
+      "title": "and another",
+      "id": 23
+    },
+    {
+      "title": "now",
+      "text": "now we good",
+      "id": 24
+    },
+    {
+      "title": "try again",
+      "text": "this is another try",
+      "id": 25
+    },
+    {
+      "title": "Fix Bug",
+      "text": "Bug has been terminated",
+      "id": 26
+    }
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
 }
