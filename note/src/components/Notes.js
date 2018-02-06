@@ -8,8 +8,9 @@ class Notes extends Component {
 	}
 
 	render() {
-		// console.log('****this.props ->', this.props);
+		console.log('****this.props ->', this.props);
 		const { notes, fetchingNotes } = this.props;
+		console.log('****notes.length ->', notes.length);
 		return (
 			<div className='Notes'>
 				{fetchingNotes ? (<h2>Loading...</h2>) :

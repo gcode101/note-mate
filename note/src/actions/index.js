@@ -5,6 +5,10 @@ export const FETCHING_NOTES = 'FETCHING_NOTES';
 export const NOTES_FETCHED = 'NOTES_FETCHED';
 export const ERROR_FETCHING_NOTES = 'ERROR_FETCHING_NOTES';
 
+export const CREATING_NOTE = 'CREATING_NOTE';
+export const CREATE_NOTE_SUCCESS = 'CREATE_NOTE_SUCCESS';
+export const CREATE_NOTE_FAILURE = 'CREATE_NOTE_FAILURE';
+
 /*Action Creators
    C - addNote
    R - getNotes
@@ -26,3 +30,34 @@ export const getNotes = () => {
 			});
 	}
 }
+
+export const createNote = (values) => {
+	return (dispatch) => {
+		dispatch ({ type: CREATING_NOTE });
+		axios
+			.post(`${url}`, values)
+			.then(({ data }) => {
+				dispatch({ type: CREATE_NOTE_SUCCESS, payload: data });
+			})
+			.catch(error => {
+				dispatch({ type: CREATE_NOTE_FAILURE, payload: error });
+			});
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
