@@ -7,7 +7,10 @@ import {
 	CREATE_NOTE_FAILURE,
 	DELETING_NOTE,
 	DELETE_NOTE_SUCCESS,
-	DELETE_NOTE_FAILURE
+	DELETE_NOTE_FAILURE,
+	UPDATING_NOTE,
+	UPDATE_NOTE_SUCCESS,
+	UPDATE_NOTE_FAILURE
 } from '../actions';
 
 const initialState = {
@@ -66,6 +69,22 @@ export const notesReducer = (state=initialState, action) => {
 			return {
 				...state,
 				deletingNote: false,
+				error: action.payload
+			};
+		case UPDATING_NOTE:
+			return {
+				...state, updatingNote: true
+			};
+		case UPDATE_NOTE_SUCCESS:
+			return {
+				...state,
+				notes: action.payload,
+				updatingNote: false
+			};
+		case UPDATE_NOTE_FAILURE:
+			return {
+				...state,
+				updatingNote: false,
 				error: action.payload
 			};
 		default:

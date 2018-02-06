@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getNotes, deleteNote } from '../actions';
+import UpdateForm from './UpdateForm';
 
 class Notes extends Component {
 	componentDidMount() {
@@ -22,6 +23,9 @@ class Notes extends Component {
 										<div>{note.title}</div>
 									</li>
 									<button onClick={() => deleteNote(note.id)}>Delete</button>
+									<div>
+										<UpdateForm id={note.id}/>
+									</div>
 								</div>
 							);
 						})}
