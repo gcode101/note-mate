@@ -9,10 +9,21 @@ class Notes extends Component {
 		this.props.getNotes();
 	}
 
+	showUpdateForm = (id, index) => {
+		const { notes } = this.props;
+		console.log('this.props', this.props);
+		console.log('id', id);
+		notes.forEach(note => {
+			if (note.id === id) {
+				const updateForm = document.getElementById(`update-box${index}`);
+				updateForm.style.display = 'block';
+			}
+		});
+	}
+
 	render() {
 		console.log('****this.props ->', this.props);
 		const { notes, fetchingNotes, deleteNote } = this.props;
-		console.log('****notes.length ->', notes.length);
 		return (
 			<div className='notes'>
 				<div className='notes__add-form'>
@@ -21,17 +32,18 @@ class Notes extends Component {
 				</div>
 				{fetchingNotes ? (<h2>Loading...</h2>) :
 					(<ul className='notes-grid'>
-						{notes.map((note) => {
+						{notes.map((note, index) => {
 							return (
 								<div className='note' key={note.id}>
 									<li>
 										<div>{note.title}</div>
 										<div>{note.text}</div>
 									</li>
-									<div className='notes_update-form'>
+									<div id={`update-box${index}`} className='notes_update-form'>
 										<UpdateForm id={note.id}/>
 									</div>
 									<button onClick={() => deleteNote(note.id)}>Delete</button>
+									<button onClick={() => this.showUpdateForm(note.id, index)}>Update this note</button>
 								</div>
 							);
 						})}
