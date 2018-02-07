@@ -12,7 +12,7 @@ class UpdateNoteForm extends Component {
 		event.preventDefault();
 		const { title, text } = this.state;
 		const id = this.props.id;
-		const form = document.getElementById('update-form');
+		const form = document.getElementById(`update-form${id}`);
 		form.reset();
 		this.props.updateNote(id, {title, text});
 	};
@@ -22,9 +22,10 @@ class UpdateNoteForm extends Component {
 	}
 
 	render () {
+		const id = this.props.id;
 		return (
 			<div className='update-form-input'>
-				<form id='update-form' onSubmit={this.handleSubmit}>
+				<form id={`update-form${id}`} onSubmit={this.handleSubmit}>
 					<input
 						type="text"
 						name="title"
@@ -41,7 +42,7 @@ class UpdateNoteForm extends Component {
 						value={this.state.text}
 						onChange={this.handleInput}
 					></textarea>
-					<button type="submit">Update</button>
+					<button type="submit">Save</button>
 				</form>
 			</div>
 		);
