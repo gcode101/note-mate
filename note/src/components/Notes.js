@@ -9,14 +9,20 @@ class Notes extends Component {
 		this.props.getNotes();
 	}
 
-	showUpdateForm = (id) => {
-		const updateForm = document.getElementById(`update-box${id}`);
-		updateForm.style.display = 'block';
+	showUpdateBox = (elem, id) => {
+		const element = document.getElementById(elem);
+		element.style.display = 'block';
+		document.getElementById(`update-button${id}`).style.display = 'none';
+		document.getElementById(`done-button${id}`).style.display = 'block';
+		document.getElementById(`delete-button${id}`).style.display = 'block';
 	}
 
-	hideUpdateForm = (id) => {
-		const updateForm = document.getElementById(`update-box${id}`);
-		updateForm.style.display = 'none';
+	hideUpdateBox = (elem, id) => {
+		const element = document.getElementById(elem);
+		element.style.display = 'none';
+		document.getElementById(`update-button${id}`).style.display = 'block';
+		document.getElementById(`done-button${id}`).style.display = 'none';
+		document.getElementById(`delete-button${id}`).style.display = 'none';
 	}
 
 	render() {
@@ -40,9 +46,23 @@ class Notes extends Component {
 									<div id={`update-box${note.id}`} className='notes_update-form'>
 										<UpdateForm id={note.id}/>
 									</div>
-									<button onClick={() => deleteNote(note.id)}>Delete</button>
-									<button onClick={() => this.showUpdateForm(note.id)}>Update this note</button>
-									<button onClick={() => this.hideUpdateForm(note.id)}>Done</button>
+									<button
+										id={`delete-button${note.id}`}
+										className='delete-button'
+										onClick={() => deleteNote(note.id)}>
+										Delete
+									</button>
+									<button
+										id={`update-button${note.id}`}
+										onClick={() => this.showUpdateBox(`update-box${note.id}`, note.id)}>
+										Update note
+									</button>
+									<button
+										id={`done-button${note.id}`}
+										className='done-button'
+										onClick={() => this.hideUpdateBox(`update-box${note.id}`, note.id)}>
+										Done
+									</button>
 								</div>
 							);
 						})}
