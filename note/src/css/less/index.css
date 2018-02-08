@@ -170,6 +170,12 @@ table {
 .secondary-button:hover {
   cursor: pointer;
 }
+.notes .loading-msg {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 40px;
+}
 .notes .notes__add-form {
   text-align: center;
 }
@@ -324,4 +330,28 @@ table {
 }
 body {
   background: #f2f4f5;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: #C5CBD3;
+}
+.Navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  height: 80px;
+  margin-bottom: 40px;
+}
+.Navbar .Navbar__nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 284px;
+}
+.Navbar .Navbar__nav .NavLink {
+  font-size: 1.2rem;
 }

@@ -34,7 +34,7 @@ class Notes extends Component {
 					<h1>Create new note</h1>
 					<AddForm />
 				</div>
-				{fetchingNotes ? (<h2>Loading...</h2>) :
+				{fetchingNotes ? (<div className='loading-msg'>Loading...</div>) :
 					(<ul className='notes-grid'>
 						{notes.map((note) => {
 							return (
