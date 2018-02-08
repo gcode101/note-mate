@@ -145,6 +145,25 @@ table {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
   margin-top: 4px;
 }
+.primary-button {
+  width: 100%;
+  max-width: 90px;
+  padding: 7px;
+  margin: 2px;
+  background: #0272b6;
+  color: white;
+  border-radius: 5px;
+}
+.secondary-button {
+  width: 100%;
+  max-width: 90px;
+  padding: 7px;
+  margin: 2px;
+  background: none;
+  border: 1px solid #0272b6;
+  color: #0272b6;
+  border-radius: 5px;
+}
 .notes .notes__add-form {
   text-align: center;
 }
@@ -174,7 +193,13 @@ table {
   margin-top: 4px;
 }
 .notes .notes__add-form .add-form-input button {
-  margin: 5px;
+  width: 100%;
+  max-width: 90px;
+  padding: 7px;
+  margin: 2px;
+  background: #0272b6;
+  color: white;
+  border-radius: 5px;
 }
 .notes .notes-grid {
   display: flex;
@@ -188,6 +213,19 @@ table {
   margin: 1rem;
   padding: 1rem;
   min-width: 15rem;
+  max-width: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.notes .notes-grid .note .note-title {
+  margin-bottom: 7px;
+  font-weight: 900;
+  font-family: cursive;
+}
+.notes .notes-grid .note .note-text {
+  font-family: cursive;
+  margin-bottom: 15px;
 }
 .notes .notes-grid .note .notes_update-form {
   display: none;
@@ -212,11 +250,52 @@ table {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
   margin-top: 4px;
 }
-.notes .notes-grid .note .delete-button {
-  display: none;
+.notes .notes-grid .note .notes_update-form .update-form-input button {
+  width: 100%;
+  max-width: 90px;
+  padding: 7px;
+  margin: 2px;
+  background: #0272b6;
+  color: white;
+  border-radius: 5px;
 }
-.notes .notes-grid .note .done-button {
+.notes .notes-grid .note .note-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.notes .notes-grid .note .note-buttons .update-button {
+  width: 100%;
+  max-width: 90px;
+  padding: 7px;
+  margin: 2px;
+  background: none;
+  border: 1px solid #0272b6;
+  color: #0272b6;
+  border-radius: 5px;
+  max-width: 35px;
+}
+.notes .notes-grid .note .note-buttons .delete-button {
   display: none;
+  width: 100%;
+  max-width: 90px;
+  padding: 7px;
+  margin: 2px;
+  background: #0272b6;
+  color: white;
+  border-radius: 5px;
+  background: #EF3E36;
+  order: 1;
+}
+.notes .notes-grid .note .note-buttons .done-button {
+  display: none;
+  width: 100%;
+  max-width: 90px;
+  padding: 7px;
+  margin: 2px;
+  background: none;
+  border: 1px solid #0272b6;
+  color: #0272b6;
+  border-radius: 5px;
 }
 .landing-page {
   background: #FCF0CC;

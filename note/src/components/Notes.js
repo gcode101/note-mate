@@ -40,29 +40,32 @@ class Notes extends Component {
 							return (
 								<div className='note' key={note.id}>
 									<li>
-										<div>{note.title}</div>
-										<div>{note.text}</div>
+										<div className="note-title">{note.title}</div>
+										<div className="note-text">{note.text}</div>
 									</li>
 									<div id={`update-box${note.id}`} className='notes_update-form'>
 										<UpdateForm id={note.id}/>
 									</div>
-									<button
-										id={`delete-button${note.id}`}
-										className='delete-button'
-										onClick={() => deleteNote(note.id)}>
-										Delete
-									</button>
-									<button
-										id={`update-button${note.id}`}
-										onClick={() => this.showUpdateBox(`update-box${note.id}`, note.id)}>
-										Update note
-									</button>
-									<button
-										id={`done-button${note.id}`}
-										className='done-button'
-										onClick={() => this.hideUpdateBox(`update-box${note.id}`, note.id)}>
-										Done
-									</button>
+									<div className='note-buttons'>
+										<button
+											id={`update-button${note.id}`}
+											className='update-button'
+											onClick={() => this.showUpdateBox(`update-box${note.id}`, note.id)}>
+											Edit
+										</button>
+										<button
+											id={`delete-button${note.id}`}
+											className='delete-button'
+											onClick={() => deleteNote(note.id)}>
+											Delete
+										</button>
+										<button
+											id={`done-button${note.id}`}
+											className='done-button'
+											onClick={() => this.hideUpdateBox(`update-box${note.id}`, note.id)}>
+											Done
+										</button>
+									</div>
 								</div>
 							);
 						})}

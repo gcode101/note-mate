@@ -22,7 +22,7 @@
 			}
 
 			button {
-				margin: 5px;
+				.primary-button;
 			}
 		}
 	}
@@ -39,6 +39,21 @@
 		  margin: 1rem;
 		  padding: 1rem;
 		  min-width: 15rem;
+		  max-width: 15rem;
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: space-between;
+
+		  .note-title {
+		  	margin-bottom: 7px;
+		  	font-weight: 900;
+		 		font-family: cursive;
+		  }
+
+		  .note-text {
+		  	font-family: cursive;
+		  	margin-bottom: 15px;
+		  }
 
 		  .notes_update-form {
 				display: none;
@@ -54,14 +69,33 @@
 					textarea {
 						.textarea-box;
 					}
+
+					button {
+						.primary-button;
+					}
 				}
 		  }
-			.delete-button {
-				display: none;
-			}
 
-		  .done-button {
-		  	display: none;
+		  .note-buttons {
+				display: flex;
+				justify-content: space-between;
+
+				.update-button {
+					.secondary-button;
+					max-width: 35px;
+				}
+
+				.delete-button {
+					display: none;
+					.primary-button;
+					background: @delete-color;
+					order: 1;
+				}
+
+			  .done-button {
+			  	display: none;
+			  	.secondary-button;
+			  }
 		  }
 		}
 	}
