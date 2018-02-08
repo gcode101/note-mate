@@ -154,6 +154,9 @@ table {
   color: white;
   border-radius: 5px;
 }
+.primary-button:hover {
+  cursor: pointer;
+}
 .secondary-button {
   width: 100%;
   max-width: 90px;
@@ -163,6 +166,9 @@ table {
   border: 1px solid #0272b6;
   color: #0272b6;
   border-radius: 5px;
+}
+.secondary-button:hover {
+  cursor: pointer;
 }
 .notes .notes__add-form {
   text-align: center;
@@ -201,13 +207,16 @@ table {
   color: white;
   border-radius: 5px;
 }
+.notes .notes__add-form .add-form-input button:hover {
+  cursor: pointer;
+}
 .notes .notes-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 .notes .notes-grid .note {
-  background-color: #fff;
+  background: #FCF0CC;
   color: rgba(0, 0, 0, 0.7);
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
   margin: 1rem;
@@ -259,6 +268,9 @@ table {
   color: white;
   border-radius: 5px;
 }
+.notes .notes-grid .note .notes_update-form .update-form-input button:hover {
+  cursor: pointer;
+}
 .notes .notes-grid .note .note-buttons {
   display: flex;
   justify-content: space-between;
@@ -273,6 +285,13 @@ table {
   color: #0272b6;
   border-radius: 5px;
   max-width: 35px;
+  border: none;
+}
+.notes .notes-grid .note .note-buttons .update-button:hover {
+  cursor: pointer;
+}
+.notes .notes-grid .note .note-buttons .update-button:hover {
+  cursor: pointer;
 }
 .notes .notes-grid .note .note-buttons .delete-button {
   display: none;
@@ -286,6 +305,9 @@ table {
   background: #EF3E36;
   order: 1;
 }
+.notes .notes-grid .note .note-buttons .delete-button:hover {
+  cursor: pointer;
+}
 .notes .notes-grid .note .note-buttons .done-button {
   display: none;
   width: 100%;
@@ -297,6 +319,9 @@ table {
   color: #0272b6;
   border-radius: 5px;
 }
-.landing-page {
-  background: #FCF0CC;
+.notes .notes-grid .note .note-buttons .done-button:hover {
+  cursor: pointer;
+}
+body {
+  background: #f2f4f5;
 }
