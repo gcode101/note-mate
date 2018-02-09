@@ -133,11 +133,7 @@ body {
   background: #f2f4f5;
 }
 a {
-  color: white;
   text-decoration: none;
-}
-a:hover {
-  color: #C5CBD3;
 }
 .input-box {
   width: 100%;
@@ -338,6 +334,28 @@ a:hover {
 .notes .notes-grid .note .note-buttons .done-button:hover {
   cursor: pointer;
 }
+.landing-page {
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+}
+.landing-page .main-text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.landing-page .main-text h1 {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+}
+.landing-page .main-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+.landing-page ul.landing-page__menu {
+  display: flex;
+  justify-content: center;
+}
 .Navbar {
   display: flex;
   justify-content: center;
@@ -354,4 +372,13 @@ a:hover {
 }
 .Navbar .Navbar__nav .NavLink {
   font-size: 1.2rem;
+}
+.Navbar .Navbar__nav .NavLink a {
+  color: white;
+}
+.Navbar .Navbar__nav .NavLink a:hover {
+  color: #C5CBD3;
+}
+.Navbar .Navbar__nav .NavLink .Navlink--selected {
+  color: #C5CBD3;
 }

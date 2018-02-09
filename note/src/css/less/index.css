@@ -175,6 +175,8 @@ a {
 }
 .secondary-button:hover {
   cursor: pointer;
+  background: #0272b6;
+  color: white;
 }
 .notes .loading-msg {
   display: flex;
@@ -301,6 +303,8 @@ a {
 }
 .notes .notes-grid .note .note-buttons .update-button:hover {
   cursor: pointer;
+  background: #0272b6;
+  color: white;
 }
 .notes .notes-grid .note .note-buttons .update-button:hover {
   cursor: pointer;
@@ -333,6 +337,8 @@ a {
 }
 .notes .notes-grid .note .note-buttons .done-button:hover {
   cursor: pointer;
+  background: #0272b6;
+  color: white;
 }
 .landing-page {
   width: 100%;
@@ -352,13 +358,29 @@ a {
   font-size: 1.5rem;
   margin-bottom: 40px;
 }
-.landing-page .labels {
+.landing-page .landing-page__menu {
   display: flex;
   justify-content: center;
-}
-.landing-page .labels h3 {
-  font-size: 1.2rem;
   margin: 20px;
+}
+.landing-page .landing-page__menu .navLink {
+  margin: 20px;
+  font-size: 1rem;
+}
+.landing-page .landing-page__menu .navLink a {
+  width: 100%;
+  max-width: 90px;
+  padding: 7px;
+  margin: 2px;
+  background: none;
+  border: 1px solid #0272b6;
+  color: #0272b6;
+  border-radius: 5px;
+}
+.landing-page .landing-page__menu .navLink a:hover {
+  cursor: pointer;
+  background: #0272b6;
+  color: white;
 }
 .Navbar {
   display: flex;

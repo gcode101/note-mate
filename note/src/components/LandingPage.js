@@ -13,12 +13,12 @@ class LandingPage extends Component {
 				</div>
 				<ul className="landing-page__menu">
 					<li className="navLink">
-						<NavLink to="login" activeClassName="navlink--selected">
+						<NavLink to="login">
 							Login
 						</NavLink>
 					</li>
 					<li className="navLink">
-						<NavLink to="signup" activeClassName="navlink--selected">
+						<NavLink to="signup">
 							Signup
 						</NavLink>
 					</li>
