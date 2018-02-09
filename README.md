@@ -1,1 +1,5 @@
-A sample for a note project
+# Note-Mate
+
+## Initialize Server
+
+```json-server --watch db.json```
