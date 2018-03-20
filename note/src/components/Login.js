@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { login } from '../actions/user';
 
 class LoginForm extends Component {
 	state = {
-		userName: '',
+		email: '',
 		password: ''
 	}
 
 	handleSubmit = (event) => {
 		event.preventDefault();
+		const { email, password } = this.state;
+		const { history } = this.props;
+		this.props.login({ email, password, history });
 	};
 
 	handleInput = (event) => {
 		this.setState({ [event.target.name]: event.target.value });
+	}
+
+	renderAlert = () => {
+		if (!this.props.error) return null;
+		return <h3>{ this.props.error }</h3>
 	}
 
 	render () {
@@ -21,10 +30,10 @@ class LoginForm extends Component {
 				<h1>Log In</h1>
 				<form id='login-form' onSubmit={this.handleSubmit}>
 					<input
-						type="text"
-						name="userName"
-						placeholder="username"
-						value={this.state.userName}
+						type="email"
+						name="email"
+						placeholder="email"
+						value={this.state.email}
 						onChange={this.handleInput}
 					/>
 					<input
@@ -35,14 +44,18 @@ class LoginForm extends Component {
 						onChange={this.handleInput}
 					/>
 					<button type="submit">Login</button>
+					{this.renderAlert()}
 				</form>
 			</div>
 		);
 	}
 }
 
-// const mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
+	return {
+		authenticated: state.auth.authenticated,
+		error: state.auth.error
+	}
+}
 
-// }
-
-export default LoginForm;
+export default connect(mapStateToProps, { login })(LoginForm);

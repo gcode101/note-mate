@@ -78,9 +78,9 @@ class Notes extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		notes: state.notesReducer.notes,
-		fetchingNotes: state.notesReducer.fetchingNotes,
-		error: state.notesReducer.error
+		notes: state.notes.notes,
+		fetchingNotes: state.notes.fetchingNotes,
+		error: state.notes.error
 	}
 }
 

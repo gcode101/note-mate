@@ -49,8 +49,8 @@ class AddNoteForm extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		addingNote: state.notesReducer.addingNote,
-		error: state.notesReducer.error
+		addingNote: state.notes.addingNote,
+		error: state.notes.error
 	}
 }
 
