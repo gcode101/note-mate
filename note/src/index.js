@@ -14,10 +14,10 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+const createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore);
 
 ReactDOM.render(
-	<Provider store={store}>
+	<Provider store={createStoreWithMiddleware(rootReducer)}>
 		<Router>
 			<div>
 				<Navigation />

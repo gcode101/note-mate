@@ -22,7 +22,7 @@ const initialState = {
 	error: null
 }
 
-export const notesReducer = (state=initialState, action) => {
+export default (state=initialState, action) => {
 	switch(action.type) {
 		case FETCHING_NOTES:
 			return {

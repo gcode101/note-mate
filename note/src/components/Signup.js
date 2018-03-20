@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { register } from '../actions/user';
 
 class SignupForm extends Component {
 	state = {
 		firstName: '',
 		lastName: '',
-		userName: '',
-		password: ''
+		email: '',
+		password: '',
+		confirmPassword: ''
 	}
 
 	handleSubmit = (event) => {
 		event.preventDefault();
+		const { firstName, lastName, email, password, confirmPassword } = this.state;
+		const { history } = this.props;
+		this.props.register({
+			firstName,
+			lastName,
+			email,
+			password,
+			confirmPassword,
+			history
+		});
 	};
 
 	handleInput = (event) => {
@@ -37,10 +49,10 @@ class SignupForm extends Component {
 						onChange={this.handleInput}
 					/>
 					<input
-						type="text"
-						name="userName"
-						placeholder="username"
-						value={this.state.userName}
+						type="email"
+						name="email"
+						placeholder="email"
+						value={this.state.email}
 						onChange={this.handleInput}
 					/>
 					<input
@@ -50,6 +62,13 @@ class SignupForm extends Component {
 						value={this.state.password}
 						onChange={this.handleInput}
 					/>
+					<input
+						type="password"
+						name="confirmPassword"
+						placeholder="confirm password"
+						value={this.state.confirmPassword}
+						onChange={this.handleInput}
+					/>
 					<button type="submit">Sign Up</button>
 				</form>
 			</div>
@@ -57,8 +76,11 @@ class SignupForm extends Component {
 	}
 }
 
-// const mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
+	return {
+		authenticated: state.auth.authenticated,
+		error: state.auth.error
+	}
+}
 
-// }
-
-export default SignupForm;
+export default connect(mapStateToProps, { register })(SignupForm);
