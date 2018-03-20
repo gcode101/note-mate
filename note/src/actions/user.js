@@ -16,7 +16,15 @@ export const authError = error => {
 	};
 };
 
-export const register = (firstName, lastName, email, password, confirmPassword, history) => {
+export const register = (values) => {
+	const {
+		firstName,
+		lastName,
+		email,
+		password,
+		confirmPassword,
+		history
+	} = values;
 	return dispatch => {
 		if (password !== confirmPassword) {
 			dispatch(authError('Passwords do not match'));
@@ -36,7 +44,8 @@ export const register = (firstName, lastName, email, password, confirmPassword, 
 	};
 };
 
-export const login = (email, password, history) => {
+export const login = (values) => {
+	const { email, password, history } = values;
 	return dispatch => {
 		axios
 			.post(`${ROOT_URL}/api/login`, { email, password })

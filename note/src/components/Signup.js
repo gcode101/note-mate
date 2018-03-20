@@ -29,6 +29,11 @@ class SignupForm extends Component {
 		this.setState({ [event.target.name]: event.target.value });
 	}
 
+	renderAlert = () => {
+		if (!this.props.error) return null;
+		return <h3>{ this.props.error }</h3>
+	}
+
 	render () {
 		return (
 			<div className='signup-form-input'>
@@ -70,6 +75,7 @@ class SignupForm extends Component {
 						onChange={this.handleInput}
 					/>
 					<button type="submit">Sign Up</button>
+					{this.renderAlert()}
 				</form>
 			</div>
 		);
