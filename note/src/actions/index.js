@@ -26,7 +26,8 @@ export const UPDATE_NOTE_FAILURE = 'UPDATE_NOTE_FAILURE';
 const url = ' http://localhost:5000';
 
 export const getNotes = () => {
-	const notes = axios.get(`${url}/api/notes`, {headers: { authorization: localStorage.getItem('authorization')}});
+	const auth = {headers: { authorization: localStorage.getItem('authorization')}};
+	const notes = axios.get(`${url}/api/notes`, auth);
 	return dispatch => {
 		dispatch({ type: FETCHING_NOTES });
 		notes
@@ -40,10 +41,11 @@ export const getNotes = () => {
 }
 
 export const createNote = (values) => {
+	const auth = {headers: { authorization: localStorage.getItem('authorization')}};
 	return (dispatch) => {
 		dispatch ({ type: CREATING_NOTE });
 		axios
-			.post(`${url}`, values)
+			.post(`${url}/api/notes`, values, auth)
 			.then(({ data }) => {
 				dispatch({ type: CREATE_NOTE_SUCCESS, payload: data });
 			})

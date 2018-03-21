@@ -51,8 +51,8 @@ class UpdateNoteForm extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		updatingNote: state.notesReducer.updatingNote,
-		error: state.notesReducer.error
+		updatingNote: state.notes.updatingNote,
+		error: state.notes.error
 	}
 }
 

@@ -4,7 +4,7 @@ import { getNotes, deleteNote } from '../actions';
 import { logout } from '../actions/user';
 import UpdateForm from './UpdateForm';
 import AddForm from './AddForm';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 
 class Notes extends Component {
 	componentDidMount() {
@@ -31,7 +31,10 @@ class Notes extends Component {
 		const { notes, fetchingNotes, deleteNote, history } = this.props;
 		return (
 			<div className='notes'>
-				<button className='secondary-button' onClick={() => this.props.logout({ history })}>Logout</button>
+				<button
+					className='logout-button secondary-button'
+					onClick={() => this.props.logout({ history })}>Logout
+				</button>
 				<div className='notes__add-form'>
 					<h1>Create new note</h1>
 					<AddForm />
