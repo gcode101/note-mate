@@ -42,32 +42,33 @@ class Notes extends Component {
 				{fetchingNotes ? (<div className='loading-msg'>Loading...</div>) :
 					(<ul className='notes-grid'>
 						{notes.map((note) => {
+							console.log('note =>', note);
 							return (
-								<div className='note' key={note.id}>
+								<div className='note' key={note._id}>
 									<li>
 										<div className="note-title">{note.title}</div>
 										<div className="note-text">{note.text}</div>
 									</li>
-									<div id={`update-box${note.id}`} className='notes_update-form'>
-										<UpdateForm id={note.id}/>
+									<div id={`update-box${note._id}`} className='notes_update-form'>
+										<UpdateForm id={note._id}/>
 									</div>
 									<div className='note-buttons'>
 										<button
-											id={`update-button${note.id}`}
+											id={`update-button${note._id}`}
 											className='update-button'
-											onClick={() => this.showUpdateBox(`update-box${note.id}`, note.id)}>
+											onClick={() => this.showUpdateBox(`update-box${note._id}`, note._id)}>
 											Edit
 										</button>
 										<button
-											id={`delete-button${note.id}`}
+											id={`delete-button${note._id}`}
 											className='delete-button'
-											onClick={() => deleteNote(note.id)}>
+											onClick={() => deleteNote(note._id)}>
 											Delete
 										</button>
 										<button
-											id={`done-button${note.id}`}
+											id={`done-button${note._id}`}
 											className='done-button'
-											onClick={() => this.hideUpdateBox(`update-box${note.id}`, note.id)}>
+											onClick={() => this.hideUpdateBox(`update-box${note._id}`, note._id)}>
 											Done
 										</button>
 									</div>
