@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getNotes, deleteNote } from '../actions';
+import { logout } from '../actions/user';
 import UpdateForm from './UpdateForm';
 import AddForm from './AddForm';
+import { withRouter } from 'react-router';
 
 class Notes extends Component {
 	componentDidMount() {
@@ -26,10 +28,10 @@ class Notes extends Component {
 	}
 
 	render() {
-		console.log('****this.props ->', this.props);
-		const { notes, fetchingNotes, deleteNote } = this.props;
+		const { notes, fetchingNotes, deleteNote, history } = this.props;
 		return (
 			<div className='notes'>
+				<button className='secondary-button' onClick={() => this.props.logout({ history })}>Logout</button>
 				<div className='notes__add-form'>
 					<h1>Create new note</h1>
 					<AddForm />
@@ -80,8 +82,9 @@ const mapStateToProps = (state) => {
 	return {
 		notes: state.notes.notes,
 		fetchingNotes: state.notes.fetchingNotes,
+
 		error: state.notes.error
 	}
 }
 
-export default connect(mapStateToProps, { getNotes, deleteNote })(Notes);
+export default withRouter(connect(mapStateToProps, { getNotes, deleteNote, logout })(Notes));

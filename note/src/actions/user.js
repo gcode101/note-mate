@@ -62,12 +62,14 @@ export const login = (values) => {
 	};
 };
 
-export const logout = () => {
+export const logout = (values) => {
+	const { history } = values;
 	return dispatch => {
 		dispatch({
 			type: USER_UNAUTHENTICATED
 		});
 		localStorage.removeItem('authorization');
+		history.push('/login');
 	};
 };
 

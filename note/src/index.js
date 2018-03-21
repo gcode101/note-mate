@@ -13,6 +13,7 @@ import Notes from './components/Notes';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import RequireAuth from './components/HOC/RequireAuth';
 
 const createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore);
 
@@ -22,7 +23,7 @@ ReactDOM.render(
 			<div>
 				<Navigation />
 				<Route path="/" component={LandingPage} exact/>
-				<Route path="/notes" component={Notes} />
+				<Route path="/notes" component={RequireAuth(Notes)} />
 				<Route path="/login" component={Login} />
 				<Route path="/signup" component={Signup} />
 			</div>

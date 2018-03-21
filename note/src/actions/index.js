@@ -23,10 +23,10 @@ export const UPDATE_NOTE_FAILURE = 'UPDATE_NOTE_FAILURE';
    U - updateNote
    D - deleteNote
 */
-const url = ' http://localhost:3000/posts';
+const url = ' http://localhost:5000';
 
 export const getNotes = () => {
-	const notes = axios.get(`${url}`);
+	const notes = axios.get(`${url}/api/notes`, {headers: { authorization: localStorage.getItem('authorization')}});
 	return dispatch => {
 		dispatch({ type: FETCHING_NOTES });
 		notes

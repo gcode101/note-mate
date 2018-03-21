@@ -12,6 +12,7 @@ class LoginForm extends Component {
 		event.preventDefault();
 		const { email, password } = this.state;
 		const { history } = this.props;
+		console.log('this.props', this.props);
 		this.props.login({ email, password, history });
 	};
 
