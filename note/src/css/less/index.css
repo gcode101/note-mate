@@ -178,6 +178,11 @@ a {
   background: #0272b6;
   color: white;
 }
+.notes .logout {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+}
 .notes .loading-msg {
   display: flex;
   justify-content: center;

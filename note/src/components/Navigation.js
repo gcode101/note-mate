@@ -10,11 +10,6 @@ function Navigation() {
 						Home
 					</NavLink>
 				</li>
-				<li className="NavLink">
-					<NavLink to="/notes" activeClassName="Navlink--selected">
-						Notes
-					</NavLink>
-				</li>
 			</ul>
 		</div>
 	);

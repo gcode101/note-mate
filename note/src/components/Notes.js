@@ -31,10 +31,12 @@ class Notes extends Component {
 		const { notes, fetchingNotes, deleteNote, history } = this.props;
 		return (
 			<div className='notes'>
-				<button
-					className='logout-button secondary-button'
-					onClick={() => this.props.logout({ history })}>Logout
-				</button>
+				<div className='logout'>
+					<button
+						className='secondary-button'
+						onClick={() => this.props.logout({ history })}>Logout
+					</button>
+				</div>
 				<div className='notes__add-form'>
 					<h1>Create new note</h1>
 					<AddForm />
@@ -42,7 +44,6 @@ class Notes extends Component {
 				{fetchingNotes ? (<div className='loading-msg'>Loading...</div>) :
 					(<ul className='notes-grid'>
 						{notes.map((note) => {
-							console.log('note =>', note);
 							return (
 								<div className='note' key={note._id}>
 									<li>

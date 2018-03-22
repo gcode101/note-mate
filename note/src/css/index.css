@@ -178,6 +178,11 @@ a {
   background: #0272b6;
   color: white;
 }
+.notes .logout {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+}
 .notes .loading-msg {
   display: flex;
   justify-content: center;
@@ -381,6 +386,66 @@ a {
   cursor: pointer;
   background: #0272b6;
   color: white;
+}
+.login-form-input {
+  margin: 40px;
+  width: 100%;
+  max-width: 250px;
+}
+.login-form-input h1 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.login-form-input input {
+  width: 100%;
+  height: 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  margin-bottom: 5px;
+}
+.login-form-input button {
+  width: 100%;
+  max-width: 90px;
+  padding: 7px;
+  margin: 2px;
+  background: #0272b6;
+  color: white;
+  border-radius: 5px;
+}
+.login-form-input button:hover {
+  cursor: pointer;
+}
+.signup-form-input {
+  margin: 40px;
+  width: 100%;
+  max-width: 250px;
+}
+.signup-form-input h1 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.signup-form-input input {
+  width: 100%;
+  height: 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  margin-bottom: 5px;
+}
+.signup-form-input button {
+  width: 100%;
+  max-width: 90px;
+  padding: 7px;
+  margin: 2px;
+  background: #0272b6;
+  color: white;
+  border-radius: 5px;
+}
+.signup-form-input button:hover {
+  cursor: pointer;
 }
 .Navbar {
   display: flex;

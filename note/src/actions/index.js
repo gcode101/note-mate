@@ -56,13 +56,14 @@ export const createNote = (values) => {
 }
 
 export const deleteNote = (id) => {
+	const auth = {headers: { authorization: localStorage.getItem('authorization')}};
 	return (dispatch) => {
 		dispatch({ type: DELETING_NOTE });
 		axios
-			.delete(`${url}/${id}`)
+			.delete(`${url}/api/notes/${id}`)
 			.then(({ data }) => {
 				return axios
-								.get(url)
+								.get(`${url}/api/notes`, auth)
 								.then(({ data }) => {
 									dispatch({ type: DELETE_NOTE_SUCCESS, payload: data });
 								})
@@ -74,13 +75,14 @@ export const deleteNote = (id) => {
 }
 
 export const updateNote = (id, newInfo) => {
-	const updatedNote = axios.put(`${url}/${id}`, newInfo);
+	const auth = {headers: { authorization: localStorage.getItem('authorization')}};
+	const updatedNote = axios.put(`${url}/api/notes/${id}`, newInfo);
 	return (dispatch) => {
 		dispatch({ type: UPDATING_NOTE });
 		updatedNote
 			.then(({ data }) => {
 				return axios
-									.get(url)
+									.get(`${url}/api/notes`, auth)
 									.then(({ data }) => {
 										dispatch({ type: UPDATE_NOTE_SUCCESS, payload: data });
 									})
